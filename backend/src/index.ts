@@ -16,6 +16,10 @@ app.use(
 )
 app.use(express.json())
 
+app.get('/', (_req, res) => {
+  res.send('Calendar Assistant Backend is running!')
+})
+
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok' })
 })
