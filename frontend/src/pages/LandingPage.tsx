@@ -32,7 +32,7 @@ export function LandingPage() {
       </header>
       <main className="app-main">
         <section className="hero">
-          <h2>Make your calendar work for you</h2>
+          <h2>Your Intelligent Calendar Assistant</h2>
           <p>
             Connect your Google Calendar, see your schedule at a glance, and
             chat with an assistant that helps you protect your focus time,

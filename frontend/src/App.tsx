@@ -6,6 +6,9 @@ import { LandingPage } from './pages/LandingPage'
 import { CalendarPage } from './pages/CalendarPage'
 import { AuthCallbackPage } from './pages/AuthCallbackPage'
 
+/**
+ * ProtectedRoute component - Guards routes that require authentication
+ */
 function ProtectedRoute({ children }: { children: ReactNode }) {
   const { isAuthenticated } = useAuth()
 
@@ -13,7 +16,7 @@ function ProtectedRoute({ children }: { children: ReactNode }) {
     return <Navigate to="/" replace />
   }
 
-  return children
+  return <>{children}</>
 }
 
 function AppRoutes() {
@@ -33,7 +36,7 @@ function AppRoutes() {
   )
 }
 
-function App() {
+export function App() {
   return (
     <AuthProvider>
       <AppRoutes />
