@@ -12,7 +12,10 @@ function requireEnv(name: string): string {
 
 export const config = {
   port: Number(process.env.PORT ?? 4000),
-  clientOrigin: process.env.CLIENT_ORIGIN ?? 'http://localhost:5173',
+  clientOrigin: (process.env.CLIENT_ORIGIN ?? 'http://localhost:5173').replace(
+    /\/$/,
+    '',
+  ),
   jwtSecret: requireEnv('JWT_SECRET'),
   googleClientId: requireEnv('GOOGLE_CLIENT_ID'),
   googleClientSecret: requireEnv('GOOGLE_CLIENT_SECRET'),
